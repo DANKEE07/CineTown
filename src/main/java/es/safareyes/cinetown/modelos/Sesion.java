@@ -19,7 +19,7 @@ public class Sesion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private Integer Id;
 
     @Column(name = "precio_base")
     private float PrecioBase;

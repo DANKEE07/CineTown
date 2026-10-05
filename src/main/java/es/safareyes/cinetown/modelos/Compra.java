@@ -16,7 +16,7 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private Integer Id;
 
     @Column(name = "parking_usado")
     private boolean ParkingUsado;

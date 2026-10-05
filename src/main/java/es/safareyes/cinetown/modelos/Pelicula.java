@@ -16,7 +16,7 @@ public class Pelicula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer Id;
 
     @Column(name = "activo")
     private Boolean Activo;

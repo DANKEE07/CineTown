@@ -18,7 +18,7 @@ public class Sala {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
+    private Integer Id;
 
     @Column(name = "numero", nullable = false)
     private int Numero;
