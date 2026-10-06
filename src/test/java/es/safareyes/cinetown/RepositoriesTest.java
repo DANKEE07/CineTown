@@ -43,4 +43,14 @@ public class RepositoriesTest {
         System.out.println("========== FIN TEST 2 ==========");
     }
 
+    @Test
+    void buscarPorAnio() {
+        System.out.println("========== INICIO TEST 3 ==========");
+
+        List<Pelicula> peliculas = peliculaRepository.buscarPorAnio(2021);
+        System.out.println("Número de películas encontradas: " + peliculas.size());
+
+        System.out.println("========== FIN TEST 3 ==========");
+    }
+
 }
