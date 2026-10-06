@@ -19,16 +19,16 @@ public class Sesion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "precio_base")
-    private float PrecioBase;
+    private float precioBase;
 
     @Column(name = "fecha_hora_inicio")
-    private LocalDateTime FechaHoraInicio;
+    private LocalDateTime fechaHoraInicio;
 
     @Column(name = "fecha_hora_fin")
-    private LocalDateTime FechaHoraFin;
+    private LocalDateTime fechaHoraFin;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_sala", nullable = false)

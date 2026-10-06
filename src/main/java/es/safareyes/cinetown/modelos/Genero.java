@@ -16,11 +16,11 @@ public class Genero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "nombre")
-    private String Nombre;
+    private String nombre;
 
-    @ManyToMany(mappedBy = "Generos")
-    private List<Pelicula> Peliculas;
+    @ManyToMany(mappedBy = "generos")
+    private List<Pelicula> peliculas;
 }

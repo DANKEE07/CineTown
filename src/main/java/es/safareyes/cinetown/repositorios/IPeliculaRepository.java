@@ -2,15 +2,12 @@ package es.safareyes.cinetown.repositorios;
 
 import es.safareyes.cinetown.modelos.Pelicula;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface IPeliculaRepository extends JpaRepository<Pelicula, Long> {
-
-    // Q1
-    List<Pelicula> findByTituloContainingIgnoreCase(String titulo);
-    List<Pelicula> findByActivoTrueOrderByTituloAsc();
-    List<Pelicula> findByClasificacion(String clasificacion);
-
-    boolean existsByTitulo(String titulo);
+public interface IPeliculaRepository extends JpaRepository<Pelicula, Integer> {
+    @Query(value = "SELECT p FROM Pelicula p WHERE p.titulo LIKE :titulo")
+    List<Pelicula> buscarPorTitulo(@Param("titulo") String titulo);
 }

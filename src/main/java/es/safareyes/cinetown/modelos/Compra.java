@@ -16,25 +16,25 @@ public class Compra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "parking_usado")
-    private boolean ParkingUsado;
+    private boolean parkingUsado;
 
     @Column(name = "fecha_compra")
-    private LocalDateTime FechaCompra;
+    private LocalDateTime fechaCompra;
 
     @Column(name = "num_entradas")
-    private int NumEntradas;
+    private int numEntradas;
 
     @Column(name = "email")
-    private String Email;
+    private String email;
 
     @Column(name = "precio_total")
-    private float PrecioTotal;
+    private float precioTotal;
 
     @Column(name = "estado")
-    private String Estado;
+    private String estado;
 
     @ManyToOne
     @JoinColumn(name = "id_sesion")

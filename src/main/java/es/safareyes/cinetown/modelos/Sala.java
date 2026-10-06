@@ -18,13 +18,13 @@ public class Sala {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "numero", nullable = false)
-    private int Numero;
+    private int numero;
 
     @Column(name = "capacidad", nullable = false)
-    private int Capacidad;
+    private int capacidad;
 
     @OneToMany(mappedBy = "sala")
     private List<Sesion> sesiones = new ArrayList<>();

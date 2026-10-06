@@ -16,25 +16,25 @@ public class Pelicula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "activo")
-    private Boolean Activo;
+    private Boolean activo;
 
     @Column(name = "anio")
-    private int Anio;
+    private int anio;
 
     @Column(name = "titulo")
-    private String Titulo;
+    private String titulo;
 
     @Column(name = "clasificacion")
-    private String Clasificacion;
+    private String clasificacion;
 
     @Column(name = "duracion")
-    private int Duracion;
+    private int duracion;
 
     @Column(name = "sinopsis")
-    private String Sinopsis;
+    private String sinopsis;
 
     /* Esto es la N:M, como la tabla pelicula_genero no tiene datos propios (solo tiene id_pelicula y id_genero)
     no hace falta crear una clase "pelicula_genero"
@@ -50,5 +50,5 @@ public class Pelicula {
 
     @ManyToMany
     @JoinTable(name = "pelicula_genero", joinColumns = @JoinColumn(name = "id_pelicula"), inverseJoinColumns = @JoinColumn(name = "id_genero"))
-    private List<Genero> Generos;
+    private List<Genero> generos;
 }

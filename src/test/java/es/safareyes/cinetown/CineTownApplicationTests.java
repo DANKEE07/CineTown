@@ -8,6 +8,7 @@ class CineTownApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

@@ -16,13 +16,13 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
 
     @Column(name = "username")
-    private String Username;
+    private String username;
 
     @Column(name = "password")
-    private String Password;
+    private String password;
 
     @OneToMany(mappedBy = "usuario")
     private List<Compra> compras = new ArrayList<>();
