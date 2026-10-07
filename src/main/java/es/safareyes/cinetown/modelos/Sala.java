@@ -12,8 +12,6 @@ import java.util.List;
 @Table(name = "sala", schema = "cinetown")
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-
 public class Sala {
 
     @Id
