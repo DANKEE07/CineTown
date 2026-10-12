@@ -1,5 +1,6 @@
 package es.safareyes.cinetown;
 
+import es.safareyes.cinetown.modelos.Genero;
 import es.safareyes.cinetown.modelos.Pelicula;
 import es.safareyes.cinetown.repositorios.IPeliculaRepository;
 import org.junit.jupiter.api.Test;
@@ -44,11 +45,30 @@ public class RepositoriesTest {
     }
 
     @Test
-    void buscarPorAnio() {
+    void buscarPorIdConGeneros() {
         System.out.println("========== INICIO TEST 3 ==========");
 
-        List<Pelicula> peliculas = peliculaRepository.buscarPorAnio(2021);
+        List<Pelicula> peliculas = peliculaRepository.buscarPorIdConGeneros(2);
         System.out.println("Número de películas encontradas: " + peliculas.size());
+
+        for (Pelicula pelicula : peliculas) {
+
+            System.out.println("----------");
+            System.out.println("Id: " + pelicula.getId());
+
+            System.out.println("Detalles: " + pelicula.getSinopsis());
+            // Entiendo que del 2º Endpoint, "Detalles" se refiere a los detalles / sinopsis de la película
+
+            System.out.println("Generos: ");
+
+            // Con este bucle he recorrido la tabla de los géneros para que se muestren los nombres en vez simplemente hacer un "peliculas.getGeneros()"
+            // y que no me mostrara el nombre de los Géneros, si no la referencia a la tabla de los géneros (un textaco raro sin sentido)
+            for (Genero genero : pelicula.getGeneros()) {
+                System.out.println("- " + genero.getNombre());
+            }
+
+            System.out.println("----------");
+        }
 
         System.out.println("========== FIN TEST 3 ==========");
     }
