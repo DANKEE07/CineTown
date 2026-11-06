@@ -1,11 +1,13 @@
 package es.safareyes.cinetown.repositorios;
 
+import es.safareyes.cinetown.dtos.PeliculaDTO;
 import es.safareyes.cinetown.modelos.Pelicula;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IPeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
@@ -15,6 +17,9 @@ public interface IPeliculaRepository extends JpaRepository<Pelicula, Integer> {
 
     // Detalle y género de la película
     @Query("SELECT DISTINCT p FROM Pelicula p LEFT JOIN FETCH p.generos WHERE p.id = :id")
-    List<Pelicula> buscarPorIdConGeneros(@Param("id") Integer id);
+    PeliculaDTO buscarPorIdConGeneros(@Param("id") Integer id);
+    // Optional en vez de List porque puede estar vacío o tener un objeto
+
+    List<Pelicula> findAll();
 
 }
